@@ -21,8 +21,8 @@ APP.get('/', domainCheck,
              checkForCachedResults,
              initiateSearch);
 
-APP.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+APP.listen(process.env.PORT, function () {
+  console.log(`Listening on port ${ process.env.PORT }!`);
 });
 
 setInterval(pruneCache, CACHE_LIFESPAN / 4);

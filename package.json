@@ -1,0 +1,15 @@
+{
+  "name": "tg-blog-search",
+  "version": "1.0.0",
+  "description": "Search HubSpot blog posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TradeGecko",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4"
+  }
+}

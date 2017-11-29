@@ -6,7 +6,12 @@ const HUBSPOT_KEY      = process.env.HUBSPOT_KEY;
 
 const BASE_URL         = 'https://api.hubapi.com/content/api/v2/blog-posts';
 const VALIDATION_PARAM = 'hapikey=' + HUBSPOT_KEY;
-const API_PARAMS       = ['archived=false', 'state=PUBLISHED', 'order_by=-publish_date'];
+const API_PARAMS       = [
+  'archived=false',
+  'state=PUBLISHED',
+  'order_by=-publish_date',
+  'content_group_id=2125467268'
+];
 
 const ALLOWED_DOMAINS  = ['hs-sites.com', 'tradegecko.com'];
 const CACHE_LIFESPAN   = 1000 * 60 * 60 * 6; // 6 hours

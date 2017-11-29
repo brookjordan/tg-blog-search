@@ -110,7 +110,9 @@ function initiateSearch(req, res) {
     httpsRes.on('end', () => {
       try {
         const parsedData = JSON.parse(rawData);
-        parsedData.tg_blog_search_version = version;
+        parsedData.tg_blog_search_meta = {
+          version,
+        };
         resolve(parsedData);
       } catch (e) {
         reject(e.message);

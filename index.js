@@ -1,3 +1,4 @@
+const version = '1.0.1'
 const express = require('express');
 const https   = require('https');
 require('dotenv').config();
@@ -109,6 +110,7 @@ function initiateSearch(req, res) {
     httpsRes.on('end', () => {
       try {
         const parsedData = JSON.parse(rawData);
+        parsedData.tg_blog_search_version = version;
         resolve(parsedData);
       } catch (e) {
         reject(e.message);
@@ -151,5 +153,6 @@ function pruneCache() {
 
 function buildAPICall(searchTerm) {
   let searchParam = `name__icontains=${ searchTerm }`;
+  console.log(`${ BASE_URL }?${ [VALIDATION_PARAM, searchParam, ...API_PARAMS].join('&') }`);
   return `${ BASE_URL }?${ [VALIDATION_PARAM, searchParam, ...API_PARAMS].join('&') }`;
 }

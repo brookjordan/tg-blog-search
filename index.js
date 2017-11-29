@@ -155,6 +155,5 @@ function pruneCache() {
 
 function buildAPICall(searchTerm) {
   let searchParam = `name__icontains=${ searchTerm }`;
-  console.log(`${ BASE_URL }?${ [VALIDATION_PARAM, searchParam, ...API_PARAMS].join('&') }`);
   return `${ BASE_URL }?${ [VALIDATION_PARAM, searchParam, ...API_PARAMS].join('&') }`;
 }
